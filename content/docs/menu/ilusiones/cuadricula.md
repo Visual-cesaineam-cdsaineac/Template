@@ -25,6 +25,11 @@ La ilusión de la cuadricula centelleante es una ilusión óptica descubierta po
 
 {{< p5-iframe sketch="/Template/sketches/ScintillatingGrid.js" width="725" height="425" >}}
 
+## Explicación
+
+El efecto de ambas ilusiones ópticas se explica comúnmente por un proceso neural llamado inhibición lateral. Las células de la retina del ojo funcionan como receptores de luz. Si se ilumina un solo receptor, éste percibe una mayor cantidad de luz que cuando se iluminan también los receptores vecinos. La iluminación de los receptores inhibe el disparo de los receptores cercanos, y el efecto se transmite lateralmente. En el caso de la ilusión de la cuadrícula de Hermann, la configuración de las bandas blancas crea una situación en la que hay más luz alrededor de las intersecciones que a lo largo de las bandas entre las intersecciones. Por tanto, la región de la intersección está más inhibida y aparecen manchas más oscuras.  
+
+
 
 
 
