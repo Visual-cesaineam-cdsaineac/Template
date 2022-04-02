@@ -1,6 +1,8 @@
+let zoom
 function setup() {
-    createCanvas(400, 400);
-    noLoop();
+    createCanvas(700, 350);
+    zoom = createSlider(0,5,0,1)
+    frameRate(30)
   }
   
 function draw() {
@@ -18,5 +20,5 @@ function draw() {
             circle((i*50)+27,(j*50)+27,7);
         }
     } 
-    filter(BLUR,5)
+    filter(BLUR,zoom.value())
 }
