@@ -1,6 +1,6 @@
 baseURL = "https://visual-cesaineam-cdsaineac.github.io/Template/"
-languageCode = "en-us"
-title = "Showcase Template"
+languageCode = "es"
+title = "Computación visual"
 theme = 'book'
 
 # Book configuration
@@ -22,7 +22,7 @@ enableGitInfo = true
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/visualcomputing/showcase'
+  BookRepo = 'https://github.com/Visual-cesaineam-cdsaineac/Template'
 
   # Configure the date format used on the pages
   # - In git information
