@@ -6,7 +6,7 @@ function setup() {
     zoom = createSlider(10,40,0,2)
     check = createCheckbox('Mostrar', true);
     createCanvas(700, 350);
-    frameRate(1);
+    frameRate(30);
     fill(0)
   }
   

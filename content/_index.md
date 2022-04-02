@@ -12,7 +12,3 @@ Desarrollado con el generador de páginas estáticas hugo y P5.js, por Cristian 
 ## Ilusiones opticas
 
 Esta sección aborda los conceptos base de las ilusiones ópticas y su categorización. De igual manera, se muestra el desarrollo de dos diferentes ilusiones opticas fisiologicas de caracter geométrico: las ilusiones de cuadrícula y las ilusiones de distorsión. A partir de estas aplicaciones, se explican las posibles causas que producen aquellos efectos visuales. 
-
-{{< hint info >}}
-The **showcase** template uses the [hugo-book](https://github.com/alex-shpak/hugo-book) theme by default. Check the [hugo themes site](https://themes.gohugo.io/) if you wish to add other ones.
-{{< /hint >}}
