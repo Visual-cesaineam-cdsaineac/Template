@@ -2,7 +2,7 @@ let zoom
 function setup() {
     createCanvas(700, 350);
     zoom = createSlider(0,5,0,1)
-    frameRate(30)
+    frameRate(0.5)
   }
   
 function draw() {
