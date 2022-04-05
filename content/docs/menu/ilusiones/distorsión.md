@@ -9,7 +9,7 @@ Esta ilusión es algo antigua, pues, data del año 1898 y, originalmente, recibi
 No obstante, hoy día es muy famosa gracias al psicólogo Richard Gregory, quien la redescubrió en 1973 y ahora es una de las preferidas de muchos.
 
 
-{{< p5-iframe sketch="/Template/sketches/WallCofee.js" width="1000" height="1000" >}}
+{{< p5-iframe sketch="/Template/sketches/WallCoffee.js" width="900" height="500" >}}
 
 Esta ilusión de la pared de la cafetería ha saltado en varias ocasiones del plano geométrico y se ha llevado al mundo real a diferentes cafeterías o lugares, gracias al atractivo visual que representa.
 
