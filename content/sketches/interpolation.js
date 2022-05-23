@@ -90,7 +90,7 @@ function edgeF(v0x,v0y,v1x,v1y,px,py){
 }
 
 function keyPressed() {
-    if (key === 'z') {
+    if (key === 'a') {
         antialising = !antialising
         fillTriangle(X1,Y1,X2,Y2,X3,Y3)
     }
