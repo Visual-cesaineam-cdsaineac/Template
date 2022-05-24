@@ -14,13 +14,10 @@ Con la técnica de la rasterización, los objetos que se ven en pantalla son cre
 
 ## Discusión
 
-
+Los algoritmos de rasterización expuestos son la base de muchas aplicaciones actuales de la computación gráfica como la creación de programas de diseño tales como Illustrator, Photoshop o 3DsMax, y aplicaciones de alta interactividad con el usuario como los videojuegos. También cabe recalcar la importancia de la eficiencia de los algoritmos puesto que el desempeño de la computación gráfica depende de un hardware adecuado que permita visualizar las implementaciones. Cómo frecuentes usuarios finales de programas que usan gráficos de alta calidad, es interesante explorar los fundamentos que permiten generar la rasterización de imágenes en aquellos software. Adicionalmente, por medio de esta práctica logramos entender mejor el concepto de interpolación y el uso de las coordenadas baricéntricas vistas en clase.
 
 ## Conclusiones
 
-- Consideramos que las coordenadas baricéntricas son una fuente de información vital para la rasterización, ya que por medio de cálculos matemáticos pueden proveernos con exactitud nueva información para representar graficamente los poligonos, tomando como base solamente los vertices de los triangulos que los componen
-
-- Los aportes de Bersenham a la computación gráfica han sido de gran importancia, pues el algoritmo del punto medio, al tener un rendimiento bastante bueno, ha sido clave para la rasterización de elementos complejos.
-
-- El algoritmo de antialising de Xiaolin Wu ha tenido gran impacto en el campod e la computación gráfica por la sencillez que lo compone, adicionalmente ha sido referenciado varias veces como al algoritmo de antialising rápido o la técnica de antialising eficiente.
-
+- Consideramos que las coordenadas baricéntricas son una fuente de información vital para la rasterización, ya que por medio de cálculos matemáticos, pueden proveernos con exactitud nueva información para graficar e interpolar información del triángulo. 
+- Los aportes de Bresenham a la computación gráfica han sido de gran importancia, pues el algoritmo del punto medio, al tener un rendimiento tan bueno, ha sido clave para la rasterización de elementos complejos.
+- El algoritmo de anti aliasing de Xiaolin Wu ha tenido gran impacto en el campo de la computación gráfica por la sencillez que lo compone, adicionalmente ha sido referenciado varias veces como al algoritmo de antialiasing rápido o la técnica de antialiasing eficiente.
