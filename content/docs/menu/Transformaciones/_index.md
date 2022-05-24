@@ -32,16 +32,15 @@ Controller.js proporciona un conjunto de funciones para tareas comunes y opcione
 
 ## Discusión
 
-Luego de haber visto varios sensores de hardware y haber experimentado con ellos( como lo fueron el Leap motion y el space navigator), nos parecio bastante interesante saber que existe este hardware y que cubre diferentes necesidades pero en nuestro caso quisimos experimentar con uno diferente como es el control de una consola de vieo juegos que investigando por internet encontramos una libreria desarrollada por un palestino <a href="https://twitter.com/SamIAre">Samir Are</a> quien desarrollo una libreria ej Javascript para reconocer los comando de un control, en este caso es un control de xbox. Nos parecio un hecho bastante interesante de unir nuestro gusto por los video juegos ya que el control es una herramienta fundamental a la hora de jugar y que ademas los controles en los espacios tridimencionales se vuelven muy intuitivos ya que cuando se juegan video juegos casi siempre se estan accediendo a estos espacios tridimensionales.
+Luego de haber visto varios sensores de hardware y haber experimentado con ellos (como lo fueron el Leap motion y el space navigator), nos parecio bastante interesante saber que existe este hardware y que cubre diferentes necesidades pero en nuestro caso quisimos experimentar con uno diferente como es el control de una consola de vieo juegos que investigando por internet encontramos una libreria desarrollada por un palestino <a href="https://twitter.com/SamIAre">Samir Are</a> quien desarrollo una libreria en Javascript para reconocer los comando de un control, en este caso es un control de xbox. Nos pareció un hecho bastante interesante de unir nuestro gusto por los videojuegos ya que el control es una herramienta fundamental a la hora de jugar y que además los controles en los espacios tridimensionales se vuelven muy intuitivos ya que cuando se juegan videojuegos casi siempre se están accediendo a estos espacios tridimensionales.
 
 
 ## Conclusiones
 
-- En el mundo digital encontramos muchas alternativas de sensores por hardware  que cada vez van siendo mas complejos, pero que para el usuario se convierten cada vez mas precisos y manejables.
-
+- En el mundo digital encontramos muchas alternativas de sensores por hardware que cada vez van siendo más complejos, pero que para el usuario se convierten cada vez más precisos y manejables.
 - En la web encontramos personas o empresas que se dedican al uso de estos sensores por hardware lo que permite que su campo de uso sea mucho mas amplio o que permite adaptar hardware por medio de software como nuevos tipos de sensores.
+- Las transformaciones 3d nos permiten hacernos una idea más cercana de lo complejo pero a la vez lo simple que se pueden generar estos espacios digitalmente, permitiéndonos así tener una visión un poco más clara lo que sucede en las proyecciones 3d como son las animaciones digitales que es un tema que abarca muchas áreas en la computación visual.
 
-- Las transformaciones 3d nos permiten hacernos una idea mas cercana de lo complejo pero a la vez lo simple que se pueden generar estos espacios digitalmente, permitiendonos asi terner una vision un poco mas clara lo que sucede en las proyecciones 3d como son las animaciones digitales que es un tema que abarca muchas areas en la computacion visual.
 
 ## Referencias
 
