@@ -1,5 +1,7 @@
-<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Texturing #                &#34;                &#34;                &#34;                &#34;  "><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Texturing #                &#34;                &#34;                &#34;                &#34;  "><meta property="og:type" content="article"><meta property="og:url" content="https://visual-cesaineam-cdsaineac.github.io/Template/docs/menu/Shaders/2._Texturing/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-06-27T23:05:16-05:00"><title>2. Texturing | Computación visual</title><link rel=manifest href=/Template/manifest.json><link rel=icon href=/Template/favicon.png type=image/x-icon><link rel=stylesheet href=/Template/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/Template/flexsearch.min.js></script>
-<script defer src=/Template/en.search.min.e099d7f5668de6534b4286576234764aaf8aaa8585b2e4e498a29893c7161f68.js integrity="sha256-4JnX9WaN5lNLQoZXYjR2Sq+KqoWFsuTkmKKYk8cWH2g=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Texturing #  Para los ejercicios de texturing, recreamos los ejercicios iniciales reemplazando el canal de color rojo en la interpolación, por el canal de color Azul.
+               &#34;                &#34;  Adicionalmente, se implementó el filtro de screen space con una figura diferente, usando en esta ocasión un circulo"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Texturing #  Para los ejercicios de texturing, recreamos los ejercicios iniciales reemplazando el canal de color rojo en la interpolación, por el canal de color Azul.
+               &#34;                &#34;  Adicionalmente, se implementó el filtro de screen space con una figura diferente, usando en esta ocasión un circulo"><meta property="og:type" content="article"><meta property="og:url" content="https://visual-cesaineam-cdsaineac.github.io/Template/docs/menu/Shaders/2._Texturing/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-06-27T23:25:19-05:00"><title>2. Texturing | Computación visual</title><link rel=manifest href=/Template/manifest.json><link rel=icon href=/Template/favicon.png type=image/x-icon><link rel=stylesheet href=/Template/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/Template/flexsearch.min.js></script>
+<script defer src=/Template/en.search.min.00dad667707d6185587374527c021b43783b59578b1be50a56089ff9ac8fb759.js integrity="sha256-ANrWZ3B9YYVYc3RSfAIbQ3g7WVeLG+UKVgif+ayPt1k=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/Template/><span>Computación visual</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Menu</span><ul><li><input type=checkbox id=section-a7e2d1058f355758e2aa831345cac6b5 class=toggle>
 <label for=section-a7e2d1058f355758e2aa831345cac6b5 class="flex justify-between"><a href=/Template/docs/menu/ilusiones/>Ilusiones</a></label><ul><li><a href=/Template/docs/menu/ilusiones/cuadricula/>Cuadricula</a></li><li><a href=/Template/docs/menu/ilusiones/distorsi%C3%B3n/>Distorsión</a></li></ul></li><li><input type=checkbox id=section-383d134cb2a673d465faec8bf44bb1dc class=toggle>
 <label for=section-383d134cb2a673d465faec8bf44bb1dc class="flex justify-between"><a href=/Template/docs/menu/integrantes/>Integrantes</a></label><ul><li><a href=/Template/docs/menu/integrantes/Cristian_David_Sainea_Cespedes/>Cristian David Sainea Cespedes</a></li><li><a href=/Template/docs/menu/integrantes/Cristian_Esteban_Sainea_Martinez/>Cristian Esteban Sainea Martinez</a></li></ul></li><li><input type=checkbox id=section-9a39f2f46eda4823e2cba823db7eced1 class=toggle>
@@ -7,8 +9,8 @@
 <label for=section-3d1a13ecbec2c2118fc0226411b14b32 class="flex justify-between"><a href=/Template/docs/menu/Shaders/>Shaders</a></label><ul><li><a href=/Template/docs/menu/Shaders/1._Coloring/>1. Coloring</a></li><li><a href=/Template/docs/menu/Shaders/2._Texturing/ class=active>2. Texturing</a></li><li><a href=/Template/docs/menu/Shaders/3._Image_Processing/>3. Image Processing</a></li><li><a href=/Template/docs/menu/Shaders/4._Procedural_Texturing/>4. Procedural Texturing</a></li></ul></li><li><input type=checkbox id=section-625a6a98e32abe32be15c68c283410c4 class=toggle>
 <label for=section-625a6a98e32abe32be15c68c283410c4 class="flex justify-between"><a href=/Template/docs/menu/Transformaciones/>Transformaciones</a></label><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/Template/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>2. Texturing</strong>
-<label for=toc-control><img src=/Template/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#texturing>Texturing</a></li></ul></nav></aside></header><article class=markdown><h1 id=texturing>Texturing
-<a class=anchor href=#texturing>#</a></h1><iframe id=Shaders_Texturing style=width:325px;height:325px srcdoc="
+<label for=toc-control><img src=/Template/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#texturing>Texturing</a><ul><li><a href=#texture-sampling>Texture Sampling</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=texturing>Texturing
+<a class=anchor href=#texturing>#</a></h1><p>Para los ejercicios de texturing, recreamos los <a href=https://visualcomputing.github.io/docs/shaders/texturing/>ejercicios iniciales</a> reemplazando el canal de color rojo en la interpolación, por el canal de color Azul.</p><p><iframe id=Shaders_Texturing style=width:325px;height:325px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -51,8 +53,7 @@
           <body>
           </body>
         </html>
-      "></iframe>
-<iframe id=Shaders_Texturing_Screen style=width:325px;height:325px srcdoc="
+      "></iframe></p><p>Adicionalmente, se implementó el filtro de screen space con una figura diferente, usando en esta ocasión un circulo</p><iframe id=Shaders_Texturing_Screen style=width:325px;height:325px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -73,8 +74,8 @@
           <body>
           </body>
         </html>
-      "></iframe>
-<iframe id=Shaders_Texturing_Sampling style=width:720px;height:525px srcdoc="
+      "></iframe><h2 id=texture-sampling>Texture Sampling
+<a class=anchor href=#texture-sampling>#</a></h2><p>Para el muestreo de textura, implementamos otras herramientas de brillo de color, como el valor V de HSV, la luminosidad L de HSL, aparte de Luma.</p><p>Instrucciones para ver los efectos sobre la imagen:</p><ul><li>Al oprimir el número &ldquo;1&rdquo; se aplica la herramienta de color luma</li><li>Al oprimir el número &ldquo;2&rdquo; se aplica la herramienta de color HSV</li><li>Al oprimir el número &ldquo;3&rdquo; se aplica la herramienta de color HSL</li><li>Al oprimir cualquier otra tecla, la imagen vuelve a su coloración original</li></ul><iframe id=Shaders_Texturing_Sampling style=width:720px;height:525px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -95,5 +96,95 @@
           <body>
           </body>
         </html>
-      "></iframe></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Visual-cesaineam-cdsaineac/Template/commit/95f5912da629e15d33f37b48942da5ec563b2dbe title="Last modified by Cristian | June 28, 2022" target=_blank rel=noopener><img src=/Template/svg/calendar.svg class=book-icon alt=Calendar>
-<span>June 28, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#texturing>Texturing</a></li></ul></nav></div></aside></main></body></html>
+      "></iframe>
+<details><summary>Shaders_Texturing_Sampling.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>lumaShader</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>img</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preload</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>lumaShader</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readShader</span>(<span style=color:#e6db74>&#39;/Template/sketches/shaders/luma.frag&#39;</span>, {<span style=color:#a6e22e>matrices</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>Tree</span>.<span style=color:#a6e22e>NONE</span>, <span style=color:#a6e22e>varyings</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>Tree</span>.<span style=color:#a6e22e>texcoords2</span> });
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// image source: https://en.wikipedia.org/wiki/HSL_and_HSV#/media/File:Fire_breathing_2_Luc_Viatour.jpg
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>img</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(<span style=color:#e6db74>&#39;/Template/sketches/shaders/fire_breathing.jpg&#39;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>700</span>, <span style=color:#ae81ff>500</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>shader</span>(<span style=color:#a6e22e>lumaShader</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>lumaShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;texture&#39;</span>, <span style=color:#a6e22e>img</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>quad</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>keyPressed</span>(){
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>key</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;1&#39;</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>lumaShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;filter_selected&#39;</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>key</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;2&#39;</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>lumaShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;filter_selected&#39;</span>, <span style=color:#ae81ff>2.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>key</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;3&#39;</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>lumaShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;filter_selected&#39;</span>, <span style=color:#ae81ff>3.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>lumaShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;filter_selected&#39;</span>, <span style=color:#ae81ff>4.0</span>);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>quad</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>); 
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><details><summary>luma.frag</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=display:flex><span><span style=color:#66d9ef>precision</span> <span style=color:#66d9ef>mediump</span> <span style=color:#66d9ef>float</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// uniforms are defined and sent by the sketch</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>float</span> filter_selected;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>sampler2D</span> texture;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// interpolated texcoord (same name and type as in vertex shader)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>varying</span> <span style=color:#66d9ef>vec2</span> texcoords2;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// returns luma of given texel</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> luma(<span style=color:#66d9ef>vec3</span> texel) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0.299</span> <span style=color:#f92672>*</span> texel.r <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.587</span> <span style=color:#f92672>*</span> texel.g <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.114</span> <span style=color:#f92672>*</span> texel.b;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// returns V of HSV of given texel</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> HSV(<span style=color:#66d9ef>vec3</span> texel) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> r <span style=color:#f92672>=</span> texel.r;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> g <span style=color:#f92672>=</span> texel.g;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> b <span style=color:#f92672>=</span> texel.b;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> Cmax <span style=color:#f92672>=</span> max(r,max(g,b)); 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> V <span style=color:#f92672>=</span> Cmax;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> V; 
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// returns L of HSL of given texel</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> HSL(<span style=color:#66d9ef>vec3</span> texel) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> r <span style=color:#f92672>=</span> texel.r;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> g <span style=color:#f92672>=</span> texel.g;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> b <span style=color:#f92672>=</span> texel.b;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> Cmax <span style=color:#f92672>=</span> max(r,max(g,b)); 
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> Cmin <span style=color:#f92672>=</span> min(r,min(g,b));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>float</span> L <span style=color:#f92672>=</span> (Cmax <span style=color:#f92672>+</span> Cmin) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2.0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> L; 
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> main() {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// texture2D(texture, texcoords2) samples texture at texcoords2 </span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// and returns the normalized texel color</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>vec4</span> texel <span style=color:#f92672>=</span> texture2D(texture, texcoords2);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (filter_selected <span style=color:#f92672>==</span> <span style=color:#ae81ff>1.0</span>){
+</span></span><span style=display:flex><span>    gl_FragColor <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec4</span>((<span style=color:#66d9ef>vec3</span>(luma(texel.rgb))), <span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(filter_selected <span style=color:#f92672>==</span> <span style=color:#ae81ff>2.0</span>){
+</span></span><span style=display:flex><span>    gl_FragColor <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec4</span>(<span style=color:#66d9ef>vec3</span>(HSV(texel.rgb)), <span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(filter_selected <span style=color:#f92672>==</span> <span style=color:#ae81ff>3.0</span>){
+</span></span><span style=display:flex><span>    gl_FragColor <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec4</span>(<span style=color:#66d9ef>vec3</span>(HSL(texel.rgb)), <span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    gl_FragColor <span style=color:#f92672>=</span> texel;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Visual-cesaineam-cdsaineac/Template/commit/9d3d3b5ca80cc68114b5bfaaec2678183647e99e title="Last modified by Cristian | June 28, 2022" target=_blank rel=noopener><img src=/Template/svg/calendar.svg class=book-icon alt=Calendar>
+<span>June 28, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#texturing>Texturing</a><ul><li><a href=#texture-sampling>Texture Sampling</a></li></ul></li></ul></nav></div></aside></main></body></html>

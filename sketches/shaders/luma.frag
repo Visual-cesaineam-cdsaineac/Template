@@ -12,39 +12,19 @@ float luma(vec3 texel) {
   return 0.299 * texel.r + 0.587 * texel.g + 0.114 * texel.b;
 }
 
-// returns HSV of given texel
+// returns V of HSV of given texel
 float HSV(vec3 texel) {
   float r = texel.r;
   float g = texel.g;
   float b = texel.b;
   
   float Cmax = max(r,max(g,b)); 
-  /*float Cmin = min(r,min(g,b));
-  float delta = Cmax - Cmin;
-  float H = 0.0;
-  
-    if (delta == 0.0){
-      H = 0.0;
-    }else if(Cmax == r){
-      H = 60.0 * (mod((g - b)/delta,6.0));
-    }else if (Cmax == g){
-      H = 60.0 * ((b - r)/delta + 2.0);
-    }else if (Cmax == g){
-      H = 60.0 * ((r - g)/delta + 4.0);
-    }
-  
-
-  float S = 0.0;
-  if(Cmax != 0.0){
-    S = delta/Cmax;
-  } */
 
   float V = Cmax;
-  //vec3 HSV = vec3(H,S,V);
-  //return HSV;
   return V; 
 }
 
+// returns L of HSL of given texel
 float HSL(vec3 texel) {
   float r = texel.r;
   float g = texel.g;
