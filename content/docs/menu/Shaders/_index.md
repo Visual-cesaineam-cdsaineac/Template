@@ -37,4 +37,10 @@ La tarea del fragment shader es definir el color normalizado del fragmento (es d
 
 El fragment shader tiene acceso a las coordenadas actuales del fragment en el espacio de la pantalla a través de la variable reservada glsl gl_FragCoord. El espacio de pantalla se define como una caja de dimensiones [0..width] * [0..height] * [0..1], donde width y height son las dimensiones de la ventana y la coordenada z almacena la profundidad del fragmento (0 para el plano cercano y 1 para el lejano).
 
+# Conclusiones
+- Es mucho más óptimo trabajar con shaders, pues las implementaciones por medio de hardware no sobrecargan el navegador o la interfaz que se esté usando al aprovechar tarjeta gráfica.
+- El desarrollo de shaders se complica ocasionalmente puesto que no hay una manera directa de hacer debugging, sin embargo al entender la lógica entre el fragment shader y Javascript se logran hacer implementaciones de alta calidad. 
+- Como trabajo futuro, sería interesante desarrollar un shader más “inteligente” que a partir del filtro de visión nocturna permitiera reconocer las placas de los autos pasando.
+
+
 
