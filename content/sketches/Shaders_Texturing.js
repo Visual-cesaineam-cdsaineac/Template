@@ -1,59 +1,28 @@
-let colorShader;
-let cmy;
-let v1, v2, v3;
+let uvShader;
 
 function preload() {
-  // The vertex shader defines how vertices are projected onto clip space.
-  // Most of the times a projection and modelview matrix are needed for this
-  // (see: https://visualcomputing.github.io/docs/shaders/programming_paradigm/).
-  // Here, however, we are going to:
-  // 1. Define the triangle vertices directly in clip space, thus bypassing
-  // both of these matrices (matrices: Tree.NONE). The p5 mandelbrot vertex
-  // shader does just the same: https://p5js.org/reference/#/p5/loadShader
-  // 2. Interpolate vertex color data (varyings: Tree.color4). Note that
-  // color data is defined in a per vertex basis with the fill command below.
-  // Have a look at the generated vertex shader in the console!
-  // readShader: https://github.com/VisualComputing/p5.treegl#handling
-  colorShader = readShader('/Template/sketches/shaders/color.frag', { matrices: Tree.NONE, varyings: Tree.color4 });
+  // Define geometry directly in clip space (i.e., matrices: Tree.NONE).
+  // Interpolate only texture coordinates (i.e., varyings: Tree.texcoords2).
+  // see: https://github.com/VisualComputing/p5.treegl#handling
+  uvShader = readShader('/Template/sketches/shaders/uv.frag', { matrices: Tree.NONE, varyings: Tree.texcoords2 });
 }
 
 function setup() {
   // shaders require WEBGL mode to work
-  createCanvas(500, 500, WEBGL);
-  // https://p5js.org/reference/#/p5/shader
-  shader(colorShader);
-  randomizeTriangle();
+  createCanvas(300, 300, WEBGL);
+  noStroke();
+  // see: https://p5js.org/reference/#/p5/shader
+  shader(uvShader);
+  // https://p5js.org/reference/#/p5/textureMode
+  // best and simplest is to just always used NORMAL
+  textureMode(NORMAL);
 }
 
 function draw() {
   background(0);
-  // the fill command is used to define the colors
-  // (to be interpolated) in a per-vertex basis
-  beginShape(TRIANGLES);
-  fill('red');
-  vertex(v1.x, v1.y);
-  fill('green');
-  vertex(v2.x, v2.y);
-  fill('blue');
-  vertex(v3.x, v3.y);
-  endShape();
-}
-
-// vertices are given directly in clip-space,
-// i.e., both x and y vertex coordinates ∈ [-1..1]
-function randomizeTriangle() {
-  v1 = p5.Vector.random2D();
-  v2 = p5.Vector.random2D();
-  v3 = p5.Vector.random2D();
-}
-
-function keyPressed() {
-  if (key == 'c') {
-    cmy = !cmy;
-    // https://p5js.org/reference/#/p5.Shader/setUniform
-    colorShader.setUniform('cmy', cmy);
-  }
-  if (key == 'r') {
-    randomizeTriangle();
-  }
+  // clip-space quad (i.e., both x and y vertex coordinates ∈ [-1..1])
+  // https://p5js.org/reference/#/p5/quad
+  // It's worth noting (not mentioned in the api docs) that the quad
+  // command also adds the texture coordinates to each of its vertices.
+  quad(-1, -1, 1, -1, 1, 1, -1, 1);
 }

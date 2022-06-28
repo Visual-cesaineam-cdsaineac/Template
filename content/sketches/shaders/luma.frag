@@ -1,9 +1,7 @@
 precision mediump float;
 
 // uniforms are defined and sent by the sketch
-uniform bool grey_scale;
-uniform bool HSV_filter;
-uniform bool HSL_filter;
+uniform float filter_selected;
 uniform sampler2D texture;
 
 // interpolated texcoord (same name and type as in vertex shader)
@@ -64,11 +62,11 @@ void main() {
   // and returns the normalized texel color
   vec4 texel = texture2D(texture, texcoords2);
 
-  if (grey_scale == true){
+  if (filter_selected == 1.0){
     gl_FragColor = vec4((vec3(luma(texel.rgb))), 1.0);
-  }else if(HSV_filter == true){
+  }else if(filter_selected == 2.0){
     gl_FragColor = vec4(vec3(HSV(texel.rgb)), 1.0);
-  }else if(HSL_filter == true){
+  }else if(filter_selected == 3.0){
     gl_FragColor = vec4(vec3(HSL(texel.rgb)), 1.0);
   }else{
     gl_FragColor = texel;
