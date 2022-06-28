@@ -20,3 +20,10 @@ Esta sección aborda los conceptos base de las ilusiones ópticas y su categoriz
 En esta sección presentamos conceptos importantes de rasterización como el trazado de líneas en dispositivos gráficos por medio del algoritmo de Bresenham y el anti-alising y su aplicación por medio del algoritmo de Xiaolin Wu. Adicionalmente, se aborda el concepto de la interpolación tomando como base las coordenandas baricentricas. 
 
 [Documento Formal Entrega 2](https://drive.google.com/file/d/1peJZDyb_LGqvXuBo-7g0EIKVtxo_kZI6/view?usp=sharing)
+
+
+## Shaders
+
+A lo largo de esta sección se muestra la implementación de Shaders, teniendo en cuenta todo el conocimiento adquirido en anteriores entregas y poniéndolo en práctica en diferentes ejercicios. Los ejercicios realizados repasan conceptos de interpolación de color, ilusiones opticas, coloración con herramientas de brillo, entre otros.  
+
+[Documento Formal Entrega 3](https://drive.google.com/file/d/1peJZDyb_LGqvXuBo-7g0EIKVtxo_kZI6/view?usp=sharing)
