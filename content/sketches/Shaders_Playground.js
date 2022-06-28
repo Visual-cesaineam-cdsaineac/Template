@@ -8,6 +8,7 @@ function preload() {
   // image source: https://en.wikipedia.org/wiki/HSL_and_HSV#/media/File:Fire_breathing_2_Luc_Viatour.jpg
   img = loadImage('/Template/sketches/shaders/night.jpg');
   vid = createVideo("/Template/sketches/shaders/videotest.mp4",vidLoad);
+  vid.hide();
 }
 
 function setup() {
