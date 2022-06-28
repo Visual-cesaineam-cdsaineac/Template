@@ -4,7 +4,7 @@ let zoom = 3;
 let blur = false;
 function preload() {
   // shader adapted from here: https://thebookofshaders.com/09/
-  illusionShader = readShader('/Template/sketches/shaders/chess.frag', { matrices: Tree.NONE, varyings: Tree.NONE });
+  illusionShader = readShader('/Template/sketches/shaders/hermann.frag', { matrices: Tree.NONE, varyings: Tree.NONE });
 }
 
 function setup() {

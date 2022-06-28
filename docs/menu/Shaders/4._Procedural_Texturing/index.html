@@ -1,0 +1,132 @@
+<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Procedural Texturing #  Para este ejercicio se generó una textura que replicara la cuadricula de Hermann sobre un cubo 3D.
+La textura creada puede modificarse de la siguiente manera:
+ Al oprimir la flecha izquierda, disminuirá la cantidad de cuadros negros en cada cara del cubo Al oprimir la flecha derecha, aumentará la cantidad de cuadros negros en cada cara del cubo Al oprimir la tecla &ldquo;b&rdquo; se aplicará un efecto de difuminación sobre la textura                &#34;"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Procedural Texturing #  Para este ejercicio se generó una textura que replicara la cuadricula de Hermann sobre un cubo 3D.
+La textura creada puede modificarse de la siguiente manera:
+ Al oprimir la flecha izquierda, disminuirá la cantidad de cuadros negros en cada cara del cubo Al oprimir la flecha derecha, aumentará la cantidad de cuadros negros en cada cara del cubo Al oprimir la tecla &ldquo;b&rdquo; se aplicará un efecto de difuminación sobre la textura                &#34;"><meta property="og:type" content="article"><meta property="og:url" content="https://visual-cesaineam-cdsaineac.github.io/Template/docs/menu/Shaders/4._Procedural_Texturing/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-06-27T23:05:16-05:00"><title>4. Procedural Texturing | Computación visual</title><link rel=manifest href=/Template/manifest.json><link rel=icon href=/Template/favicon.png type=image/x-icon><link rel=stylesheet href=/Template/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/Template/flexsearch.min.js></script>
+<script defer src=/Template/en.search.min.e099d7f5668de6534b4286576234764aaf8aaa8585b2e4e498a29893c7161f68.js integrity="sha256-4JnX9WaN5lNLQoZXYjR2Sq+KqoWFsuTkmKKYk8cWH2g=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/Template/><span>Computación visual</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Menu</span><ul><li><input type=checkbox id=section-a7e2d1058f355758e2aa831345cac6b5 class=toggle>
+<label for=section-a7e2d1058f355758e2aa831345cac6b5 class="flex justify-between"><a href=/Template/docs/menu/ilusiones/>Ilusiones</a></label><ul><li><a href=/Template/docs/menu/ilusiones/cuadricula/>Cuadricula</a></li><li><a href=/Template/docs/menu/ilusiones/distorsi%C3%B3n/>Distorsión</a></li></ul></li><li><input type=checkbox id=section-383d134cb2a673d465faec8bf44bb1dc class=toggle>
+<label for=section-383d134cb2a673d465faec8bf44bb1dc class="flex justify-between"><a href=/Template/docs/menu/integrantes/>Integrantes</a></label><ul><li><a href=/Template/docs/menu/integrantes/Cristian_David_Sainea_Cespedes/>Cristian David Sainea Cespedes</a></li><li><a href=/Template/docs/menu/integrantes/Cristian_Esteban_Sainea_Martinez/>Cristian Esteban Sainea Martinez</a></li></ul></li><li><input type=checkbox id=section-9a39f2f46eda4823e2cba823db7eced1 class=toggle>
+<label for=section-9a39f2f46eda4823e2cba823db7eced1 class="flex justify-between"><a href=/Template/docs/menu/rasterizacion/>Rasterizacion</a></label><ul><li><a href=/Template/docs/menu/rasterizacion/1._Bresenham/>1. Bresenham</a></li><li><a href=/Template/docs/menu/rasterizacion/2._Xiaolin_Wu/>2. Xiaolin Wu</a></li><li><a href=/Template/docs/menu/rasterizacion/3._Interpolaci%C3%B3n/>3. Interpolación</a></li></ul></li><li><input type=checkbox id=section-3d1a13ecbec2c2118fc0226411b14b32 class=toggle checked>
+<label for=section-3d1a13ecbec2c2118fc0226411b14b32 class="flex justify-between"><a href=/Template/docs/menu/Shaders/>Shaders</a></label><ul><li><a href=/Template/docs/menu/Shaders/1._Coloring/>1. Coloring</a></li><li><a href=/Template/docs/menu/Shaders/2._Texturing/>2. Texturing</a></li><li><a href=/Template/docs/menu/Shaders/3._Image_Processing/>3. Image Processing</a></li><li><a href=/Template/docs/menu/Shaders/4._Procedural_Texturing/ class=active>4. Procedural Texturing</a></li></ul></li><li><input type=checkbox id=section-625a6a98e32abe32be15c68c283410c4 class=toggle>
+<label for=section-625a6a98e32abe32be15c68c283410c4 class="flex justify-between"><a href=/Template/docs/menu/Transformaciones/>Transformaciones</a></label><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/Template/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>4. Procedural Texturing</strong>
+<label for=toc-control><img src=/Template/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#procedural-texturing>Procedural Texturing</a></li></ul></nav></aside></header><article class=markdown><h1 id=procedural-texturing>Procedural Texturing
+<a class=anchor href=#procedural-texturing>#</a></h1><p>Para este ejercicio se generó una textura que replicara la <a href=../../ilusiones/cuadricula/>cuadricula de Hermann</a> sobre un cubo 3D.</p><p>La textura creada puede modificarse de la siguiente manera:</p><ul><li>Al oprimir la flecha izquierda, disminuirá la cantidad de cuadros negros en cada cara del cubo</li><li>Al oprimir la flecha derecha, aumentará la cantidad de cuadros negros en cada cara del cubo</li><li>Al oprimir la tecla &ldquo;b&rdquo; se aplicará un efecto de difuminación sobre la textura</li></ul><iframe id=Shaders_Procedural_Texturing style=width:425px;height:425px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js></script>
+            <script src=https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js></script>
+            <script src=https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js></script>
+            <script src=https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js></script>
+            <script src=https://samiare.github.io/Controller.js/js/Controller.js></script>
+            <script src=https://samiare.github.io/Controller.js/js/Controller.layouts.js></script>
+            
+            
+            
+            
+            
+            <script src=/Template/sketches/Shaders_Procedural_Texturing.js></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+<details><summary>Shaders_Procedural_Texturing.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>pg</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>illusionShader</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>zoom</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>blur</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>preload</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// shader adapted from here: https://thebookofshaders.com/09/
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>illusionShader</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readShader</span>(<span style=color:#e6db74>&#39;/Template/sketches/shaders/hermann.frag&#39;</span>, { <span style=color:#a6e22e>matrices</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>Tree</span>.<span style=color:#a6e22e>NONE</span>, <span style=color:#a6e22e>varyings</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>Tree</span>.<span style=color:#a6e22e>NONE</span> });
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>400</span>, <span style=color:#ae81ff>400</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// create frame buffer object to render the procedural texture
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>pg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createGraphics</span>(<span style=color:#ae81ff>400</span>, <span style=color:#ae81ff>400</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>textureMode</span>(<span style=color:#a6e22e>NORMAL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// use illusionShader to render onto pg
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>shader</span>(<span style=color:#a6e22e>illusionShader</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// emitResolution, see:
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>// https://github.com/VisualComputing/p5.treegl#macros
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>emitResolution</span>(<span style=color:#a6e22e>illusionShader</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// https://p5js.org/reference/#/p5.Shader/setUniform
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>illusionShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;u_zoom&#39;</span>, <span style=color:#a6e22e>zoom</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>illusionShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;u_blur&#39;</span>, <span style=color:#a6e22e>blur</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// pg clip-space quad (i.e., both x and y vertex coordinates ∈ [-1..1])
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>quad</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// set pg as texture
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>texture</span>(<span style=color:#a6e22e>pg</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>33</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>orbitControl</span>();
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//cylinder(100, 200);
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>box</span>(<span style=color:#ae81ff>200</span>)
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//sphere(100);
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>keyPressed</span>(){
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>keyCode</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>LEFT_ARROW</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>zoom</span> <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>illusionShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;u_zoom&#39;</span>, <span style=color:#a6e22e>zoom</span>);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>keyCode</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>RIGHT_ARROW</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>zoom</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;b&#39;</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>blur</span> <span style=color:#f92672>=</span> <span style=color:#f92672>!</span><span style=color:#a6e22e>blur</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>illusionShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;u_zoom&#39;</span>, <span style=color:#a6e22e>zoom</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>illusionShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#39;u_blur&#39;</span>, <span style=color:#a6e22e>blur</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pg</span>.<span style=color:#a6e22e>quad</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><details><summary>hermann.frag</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-glsl data-lang=glsl><span style=display:flex><span><span style=color:#66d9ef>precision</span> <span style=color:#66d9ef>mediump</span> <span style=color:#66d9ef>float</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>vec2</span> u_resolution;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>float</span> u_time;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>float</span> u_zoom;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>uniform</span> <span style=color:#66d9ef>bool</span> u_blur;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>vec2</span> tile(<span style=color:#66d9ef>vec2</span> _st, <span style=color:#66d9ef>float</span> _zoom){
+</span></span><span style=display:flex><span>    _st <span style=color:#f92672>*=</span> _zoom;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> fract(_st);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> box(<span style=color:#66d9ef>vec2</span> _st, <span style=color:#66d9ef>vec2</span> _size, <span style=color:#66d9ef>float</span> _smoothEdges){
+</span></span><span style=display:flex><span>    _size <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec2</span>(<span style=color:#ae81ff>0.5</span>)<span style=color:#f92672>-</span>_size<span style=color:#f92672>*</span><span style=color:#ae81ff>0.5</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>vec2</span> aa <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec2</span>(_smoothEdges<span style=color:#f92672>*</span><span style=color:#ae81ff>0.5</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>vec2</span> uv <span style=color:#f92672>=</span> smoothstep(_size,_size<span style=color:#f92672>+</span>aa,_st);
+</span></span><span style=display:flex><span>    uv <span style=color:#f92672>*=</span> smoothstep(_size,_size<span style=color:#f92672>+</span>aa,<span style=color:#66d9ef>vec2</span>(<span style=color:#ae81ff>1.0</span>)<span style=color:#f92672>-</span>_st);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (uv.x)<span style=color:#f92672>*</span>(uv.y);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> main(<span style=color:#66d9ef>void</span>){
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>vec2</span> st <span style=color:#f92672>=</span> gl_FragCoord.xy<span style=color:#f92672>/</span>u_resolution.xy;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>vec3</span> color <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec3</span>(<span style=color:#ae81ff>0.0</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Amount of tiles </span>
+</span></span><span style=display:flex><span>    st <span style=color:#f92672>=</span> tile(st,u_zoom);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Define blur on box</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> blur_value <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.01</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span>(u_blur){
+</span></span><span style=display:flex><span>        blur_value <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.2</span>;
+</span></span><span style=display:flex><span>    }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>        blur_value <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.01</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Drawing box</span>
+</span></span><span style=display:flex><span>    color <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec3</span>(<span style=color:#ae81ff>1.0</span> <span style=color:#f92672>-</span> box(st,<span style=color:#66d9ef>vec2</span>(<span style=color:#ae81ff>0.85</span>),blur_value));
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// color = vec3(st,0.0);</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    gl_FragColor <span style=color:#f92672>=</span> <span style=color:#66d9ef>vec4</span>(color,<span style=color:#ae81ff>1.0</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Visual-cesaineam-cdsaineac/Template/commit/95f5912da629e15d33f37b48942da5ec563b2dbe title="Last modified by Cristian | June 28, 2022" target=_blank rel=noopener><img src=/Template/svg/calendar.svg class=book-icon alt=Calendar>
+<span>June 28, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#procedural-texturing>Procedural Texturing</a></li></ul></nav></div></aside></main></body></html>
